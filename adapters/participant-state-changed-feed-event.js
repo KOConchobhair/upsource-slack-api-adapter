@@ -17,10 +17,9 @@ module.exports = function(review) {
         });
 
         return {
-                text: `Review #${review.data.base.reviewNumber}: Participant state changed from ${reviewState[review.data.oldState]$
+		text: `Review #${review.data.base.reviewNumber}: Participant state changed from ${reviewState[review.data.oldState]} to ${reviewState[review.data.newState]}`,
                 attachments: [
-                        {
-                                fallback: `Review #${review.data.base.reviewNumber}: Participant state changed from ${reviewState[r$
+				fallback: `Review #${review.data.base.reviewNumber}: Participant state changed from ${reviewState[review.data.oldState]} to ${reviewState[review.data.newState]}`,
                                 fields: [
                                         {
                                                 title: 'Project',
