@@ -12,6 +12,17 @@
     "axios": "^0.12.0",
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
-    "lodash": "^4.13.1"
-  }
+    "lodash": "^4.13.1",
+    "request": "^2.81.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KOConchobhair/upsource-slack-api-adapter.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/KOConchobhair/upsource-slack-api-adapter/issues"
+  },
+  "homepage": "https://github.com/KOConchobhair/upsource-slack-api-adapter#readme"
 }
