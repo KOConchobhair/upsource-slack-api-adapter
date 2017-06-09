@@ -1,4 +1,5 @@
 const _ = require('lodash');
+const config = require('../config.json');
 
 module.exports = function(review) {
 	const reviewers = _.chain(review).get('data.base.userIds', []).map('userName').value().join(', ');
@@ -28,10 +29,15 @@ module.exports = function(review) {
                                                 short: true
                                         },
                                         {
-                                                title: 'Reviewer(s)',
-                                                value: reviewers,
+                                                title: 'Changed by',
+                                                value: review.data.participant.userName,
                                                 short: true
-                                        }
+                                        },
+					{
+						title: 'Link',
+						value: '<' + config.upsourceUrl + '/' + review.projectId + '/review/' + review.data.base.reviewId + '|' + review.data.base.reviewId + '>'
+					}
+
                                 ],
                                 color: color()
                         }
