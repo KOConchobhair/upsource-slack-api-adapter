@@ -1,7 +1,7 @@
 const _ = require('lodash');
 
 module.exports = function(review) {
-        const reviewers = _.chain(review).get('data.base.userIds', []).map('userName').value().join(', ');
+	const reviewers = _.chain(review).get('data.base.userIds', []).map('userName').value().join(', ');
         const reviewState  = {
                 0: '_Unread_',
                 1: '_Read_',
@@ -19,6 +19,7 @@ module.exports = function(review) {
         return {
 		text: `Review #${review.data.base.reviewNumber}: Participant state changed from ${reviewState[review.data.oldState]} to ${reviewState[review.data.newState]}`,
                 attachments: [
+                       {
 				fallback: `Review #${review.data.base.reviewNumber}: Participant state changed from ${reviewState[review.data.oldState]} to ${reviewState[review.data.newState]}`,
                                 fields: [
                                         {
